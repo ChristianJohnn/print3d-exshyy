@@ -1,0 +1,495 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EXSHY3D - Jasa 3D Printing Profesional, Prototype, Miniatur, Sparepart, dan Custom Design">
+<title>EXSHY3D | Premium 3D Printing Service</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--primary:#00bfff;
+--secondary:#0077ff;
+--dark:#0f172a;
+--light:#ffffff;
+--gray:#f5f7fa;
+--text:#333;
+}
+
+.dark{
+--light:#0f172a;
+--gray:#111827;
+--text:#ffffff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--light);
+color:var(--text);
+transition:.4s;
+}
+
+header{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:5rem;
+font-weight:800;
+}
+
+.hero p{
+margin:20px 0;
+font-size:1.2rem;
+}
+
+.btn{
+display:inline-block;
+padding:14px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+background:var(--primary);
+color:white;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(10px);
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+font-size:1.7rem;
+font-weight:800;
+color:white;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+}
+
+.dark-btn{
+cursor:pointer;
+padding:10px 15px;
+border:none;
+border-radius:30px;
+font-weight:600;
+}
+
+section{
+padding:90px 10%;
+}
+
+.title{
+text-align:center;
+font-size:2.7rem;
+margin-bottom:40px;
+color:var(--secondary);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:var(--gray);
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+text-align:center;
+}
+
+.stat{
+padding:30px;
+background:linear-gradient(135deg,var(--secondary),var(--primary));
+color:white;
+border-radius:20px;
+}
+
+.stat h2{
+font-size:3rem;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+cursor:pointer;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.price-box{
+background:var(--gray);
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.price-box h3{
+margin-bottom:15px;
+}
+
+.price{
+font-size:2rem;
+color:var(--secondary);
+font-weight:700;
+}
+
+.testimonial{
+background:var(--gray);
+padding:25px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+form{
+display:grid;
+gap:15px;
+}
+
+input,textarea{
+padding:15px;
+border-radius:10px;
+border:1px solid #ccc;
+width:100%;
+}
+
+button{
+padding:15px;
+background:var(--secondary);
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+iframe{
+width:100%;
+height:400px;
+border:none;
+border-radius:20px;
+}
+
+footer{
+background:#020617;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:65px;
+height:65px;
+background:#25D366;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+z-index:999;
+}
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:15px;
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:3rem;
+}
+nav ul{
+display:none;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">EXSHY3D</div>
+<ul>
+<li><a href="#about">Tentang</a></li>
+<li><a href="#service">Layanan</a></li>
+<li><a href="#gallery">Galeri</a></li>
+<li><a href="#price">Harga</a></li>
+<li><a href="#contact">Kontak</a></li>
+</ul>
+<button class="dark-btn" onclick="toggleDark()">🌙</button>
+</nav>
+
+<header>
+<div class="hero">
+<h1>EXSHY3D</h1>
+<p>Jasa 3D Printing Profesional untuk Prototype, Miniatur, Sparepart dan Custom Design</p>
+<a href="#contact" class="btn">Pesan Sekarang</a>
+</div>
+</header>
+
+<section id="about" class="fade">
+<h2 class="title">Apa Itu 3D Printing?</h2>
+<div class="cards">
+<div class="card">
+<h3>Teknologi Modern</h3>
+<p>3D Printing adalah proses pembuatan objek tiga dimensi dari desain digital secara berlapis.</p>
+</div>
+<div class="card">
+<h3>Custom Design</h3>
+<p>Dapat mencetak model sesuai kebutuhan pelanggan.</p>
+</div>
+<div class="card">
+<h3>Presisi Tinggi</h3>
+<p>Cocok untuk industri, pendidikan, hobi, dan prototype.</p>
+</div>
+</div>
+</section>
+
+<section class="fade">
+<h2 class="title">Statistik EXSHY3D</h2>
+<div class="stats">
+<div class="stat"><h2>100+</h2><p>Proyek</p></div>
+<div class="stat"><h2>50+</h2><p>Pelanggan</p></div>
+<div class="stat"><h2>24H</h2><p>Respon Cepat</p></div>
+<div class="stat"><h2>99%</h2><p>Kepuasan</p></div>
+</div>
+</section>
+
+<section id="service" class="fade">
+<h2 class="title">Layanan</h2>
+<div class="cards">
+<div class="card">Prototype Produk</div>
+<div class="card">Miniatur Arsitektur</div>
+<div class="card">Sparepart Custom</div>
+<div class="card">Mainan & Action Figure</div>
+<div class="card">Aksesoris</div>
+<div class="card">Desain 3D CAD</div>
+</div>
+</section>
+
+<section id="gallery" class="fade">
+<h2 class="title">Galeri</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" onclick="openImg(this.src)">
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4" onclick="openImg(this.src)">
+<img src="https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf" onclick="openImg(this.src)">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475" onclick="openImg(this.src)">
+</div>
+</section>
+
+<section id="price" class="fade">
+<h2 class="title">Daftar Harga</h2>
+<div class="pricing">
+<div class="price-box">
+<h3>Mini</h3>
+<div class="price">Rp20K+</div>
+<p>Objek kecil</p>
+</div>
+
+<div class="price-box">
+<h3>Standar</h3>
+<div class="price">Rp50K+</div>
+<p>Objek menengah</p>
+</div>
+
+<div class="price-box">
+<h3>Premium</h3>
+<div class="price">Custom</div>
+<p>Objek besar & kompleks</p>
+</div>
+</div>
+</section>
+
+<section class="fade">
+<h2 class="title">Testimoni</h2>
+<div class="testimonial">
+⭐⭐⭐⭐⭐ "Hasil sangat rapi dan presisi."
+</div>
+<div class="testimonial">
+⭐⭐⭐⭐⭐ "Pelayanan cepat dan ramah."
+</div>
+<div class="testimonial">
+⭐⭐⭐⭐⭐ "Sangat cocok untuk prototype tugas dan industri."
+</div>
+</section>
+
+<section id="contact" class="fade">
+<h2 class="title">Hubungi Kami</h2>
+
+<form>
+<input type="text" placeholder="Nama">
+<input type="email" placeholder="Email">
+<textarea rows="5" placeholder="Pesan"></textarea>
+<button type="submit">Kirim</button>
+</form>
+
+<br><br>
+
+<h3>WhatsApp</h3>
+<p>0882008928602</p>
+
+<br>
+
+<h3>Email</h3>
+<p>sanchaprasetya33@gmail.com</p>
+
+<br>
+
+<h3>Alamat</h3>
+<p>
+Perumahan Mutiara Hati Blok H10,<br>
+Karangroto, Kota Semarang,<br>
+Jawa Tengah
+</p>
+
+<br><br>
+
+<iframe src="https://maps.google.com/maps?q=Karangroto%20Semarang&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</section>
+
+<footer>
+© 2026 EXSHY3D - All Rights Reserved
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/62882008928602"
+target="_blank">💬</a>
+
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+<img id="lightbox-img">
+</div>
+
+<script>
+function toggleDark(){
+document.body.classList.toggle('dark');
+}
+
+const fades=document.querySelectorAll('.fade');
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+fades.forEach(el=>observer.observe(el));
+
+function openImg(src){
+document.getElementById('lightbox').style.display='flex';
+document.getElementById('lightbox-img').src=src;
+}
+
+function closeImg(){
+document.getElementById('lightbox').style.display='none';
+}
+</script>
+
+</body>
+</html>
+```
